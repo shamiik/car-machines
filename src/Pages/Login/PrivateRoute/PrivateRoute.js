@@ -1,22 +1,21 @@
 import React from 'react';
-import { Route } from 'react-router';
+import { Redirect, Route } from 'react-router';
 
 const PrivateRoute = ({ children, ...rest }) => {
-    const { } = useAuth();
+    const { user } = useAuth();
     return (
-        <Route>
+        <Route
             {...rest}
             render={({ location }) =>
-                auth.user ?
-                    children
-                    : (
-                        <Redirect
-                            to={{
-                                pathname: "/login",
-                                state: { from: location }
-                            }}
-                        />
-        </Route>
+                user.email ? children : <Redirect
+                    to={{
+                        pathname: "/login",
+                        state: { from: location }
+                    }}
+                ></Redirect>
+            }
+        >;
+        </Route >
     );
 };
 
