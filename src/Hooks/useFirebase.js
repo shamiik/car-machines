@@ -34,3 +34,4 @@ const useFirebase = () => {
         logOut
     }
 }
+export default useFirebase;
