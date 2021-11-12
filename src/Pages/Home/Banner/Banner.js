@@ -7,7 +7,7 @@ import banner3 from '../../../images/banner/banner3.jpg'
 
 const Banner = () => {
     return (
-        <>
+        <div className="py-1.8">
             <Carousel>
                 <Carousel.Item>
                     <img
@@ -45,7 +45,7 @@ const Banner = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-        </>
+        </div>
     );
 };
 
